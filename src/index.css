@@ -1,3 +1,137 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+@layer base {
+  :root {
+    --bg-gray: #E9E9E9; /* Определяем CSS-переменную */
+  }
+}
+
+body{
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  color: #222;
+}
+@layer components {
+  main{
+    @apply relative w-full;
+  }
+  header{
+    @apply fixed z-40 w-full py-6;
+    .header{
+      @apply grid grid-cols-12 items-center;
+    }
+    a {
+      @apply inline-block col-span-2;
+    }
+    nav{
+      @apply col-span-8;
+      ul {
+        @apply flex gap-6;
+      } 
+    }
+    .btns{
+      @apply col-span-2 justify-self-end;
+    }
+  }
+  .welcome-section{
+    @apply w-full h-screen;
+    background-color: var(--bg-gray);
+    .welcome-body{
+      @apply container mx-auto pt-[132px];
+      span{
+        font-size: 14px;
+        line-height: 100%;
+      }
+      .label{
+        padding: 3px 9px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        border: 1px solid rgba(34, 34, 34, 0.3);
+        border-radius: 4px;
+      }
+      h1{
+        max-width: 933px;
+        margin: 22px auto 0;
+        font-weight: 700;
+        font-size: 66px;
+        line-height: 100%;
+        text-align: center;
+        color: #222222;
+      }
+      p{
+        margin: 20px auto 0;
+
+        max-width: max-content;
+
+        font-family: 'Inter Tight';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 200%;
+      }
+      .welcome-btn{
+        @apply flex items-center justify-center text-white;
+
+        margin: 21px auto 0;
+
+        width: 198px;
+        height: 72px;
+
+        background: #FA5D29;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 200%;
+      }
+    }
+  }
+  .about{
+    position: relative;
+    img{
+      width: 100%;
+      height: 100dvh;
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    h2{
+      @apply absolute z-10 top-[15%] left-[10%] max-w-[404px] text-white;
+      font-weight: 900;
+      font-size: 42px;
+      line-height: 160%;
+    }
+    p{
+      @apply absolute z-10 bottom-[83px] right-[43px] text-white uppercase;
+      width: 538px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 120%;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+
+
+.button{
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 500;
+  height: 42px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+.btn-regular{
+  border: 1px solid #222;
+}
+.btn-solid{
+  background: #222;
+  color: #fff;
+}
